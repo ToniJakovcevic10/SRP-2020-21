@@ -39,7 +39,7 @@ class LoginService {
       const token = this.generateToken(payload)
       return {user, token}
     }
-
+    this.logger.error("invalid password");
     throw new Error("Authentication failed");
   }
 
