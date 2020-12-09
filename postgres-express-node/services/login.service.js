@@ -1,3 +1,4 @@
+const bcrypt= require("bcryptjs");
 const jwt= require("jsonwebtoken");
 const config=require("../config");
 
@@ -22,7 +23,9 @@ class LoginService {
     }
 
     this.logger.info("checking password");
-    if(userRecord.password=== password)
+    const validPassword= await bcrypt.compare(password, userRecord.password)
+
+    if(validPassword)
     {
       this.logger.info("Password correct, proceed and generate JWT");
       
