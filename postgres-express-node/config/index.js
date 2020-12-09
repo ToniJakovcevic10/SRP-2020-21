@@ -43,4 +43,7 @@ module.exports = {
       ],
     },
   },
+  bcrypt: {
+      SALT_ROUNDS: 12,
+  },
 };
