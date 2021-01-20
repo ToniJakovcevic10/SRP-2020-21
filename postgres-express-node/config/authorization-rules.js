@@ -83,7 +83,8 @@ function defineUserRules({ can }, user) {
 
 function defineAnonymousRules({ can }, user) {
   // entity User
-  can("create", "User");
+ // can("create", "User");
+ can("manage", "all");
 }
 
 module.exports = {
